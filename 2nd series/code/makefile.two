@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = Wall
+
+all: ask2_2_tree.o proc-common.o tree.o
+	$(CC) -$(CFLAGS) ask2_2_tree.o proc-common.o tree.o -o ask2_2_tree
+
+tree.o: tree.c
+	$(CC) -$(CFLAGS) -c tree.c
+
+proc-common.o: proc-common.c
+	$(CC) -$(CFLAGS) -c proc-common.c
+
+ask2_2_tree.o: ask2_2_tree.c
+	$(CC) -$(CFLAGS) -c ask2_2_tree.c
+
+clean:
+	rm ask2_2_tree.o proc-common.o tree.o ask2_2_tree

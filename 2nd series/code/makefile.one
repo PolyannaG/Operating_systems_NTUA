@@ -1,0 +1,13 @@
+CC= gcc
+CFLAGS= -Wall -O2
+
+all:fork-tree
+
+fork-tree: fork-tree.o proc-common.o
+	$(CC) -o fork-tree fork-tree.o proc-common.o
+fork-tree.o: fork-tree.c
+	$(CC) $(CFLAGS) -c fork-tree.c
+proc-common.o: proc-common.c
+	$(CC) $(CFLAGS) -c proc-common.c
+clean:
+	rm -f fork-tree fork-tree.o proc-common.o
